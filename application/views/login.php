@@ -51,20 +51,28 @@ data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
                     <img src="<?php echo base_url('app-assets/images/portrait/medium/avatar-m-1.png') ?>" class="rounded-circle  height-150"
                      alt="Card image">
                   </div>
+                  <?php if ($this->session->flashdata('gagallogin')):?>
+                  <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong> Username </strong> & <strong> Password </strong> yang anda masukan salah   </a>
+                  </div>
+                <?php endif ?>
                   <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
                     <span>Using Account Details</span>
                   </p>
                   <div class="card-body">
-                    <form class="form-horizontal" action="index.html" novalidate>
+                    <form class="form-horizontal" action="<?php echo base_url('login/ceklogin') ?>" method ='POST'>
                       <fieldset class="form-group position-relative has-icon-left">
-                        <input type="text" class="form-control" id="user-name" placeholder="Your Username"
+                        <input type="text" class="form-control" placeholder="Your Username" name="username" 
                         required>
                         <div class="form-control-position">
                           <i class="ft-user"></i>
                         </div>
                       </fieldset>
                       <fieldset class="form-group position-relative has-icon-left">
-                        <input type="password" class="form-control" id="user-password" placeholder="Enter Password"
+                        <input type="password" class="form-control" placeholder="Enter Password" name="password" 
                         required>
                         <div class="form-control-position">
                           <i class="fa fa-key"></i>
@@ -77,7 +85,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
                             <label for="remember-me"> Remember Me</label>
                           </fieldset>
                         </div>
-                        <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div>
+                        <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Lupa Password?</a></div>
                       </div>
                       <button type="submit" class="btn btn-outline-primary btn-block"><i class="ft-unlock"></i> Login</button>
                     </form>
