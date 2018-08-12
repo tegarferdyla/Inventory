@@ -59,10 +59,10 @@ class Stok extends CI_Controller
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('stok/editprofile');
+				redirect('Stok/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('stok/editprofile');
+				redirect('Stok/editprofile');
 			}
 		} else {
 			$result = $this->upload->data();
@@ -75,10 +75,10 @@ class Stok extends CI_Controller
 
 			if ($result > 0) {
 				$this->session->set_flashdata('updateberhasil', 'true');
-				redirect('stok/editprofile');
+				redirect('Stok/editprofile');
 			} else {
 				$this->session->set_flashdata('updategagal', 'true');
-				redirect('stok/editprofile');
+				redirect('Stok/editprofile');
 			}
 		}
 	}
@@ -132,11 +132,11 @@ class Stok extends CI_Controller
 
 		if ($result > 0) {
 			$this->session->set_flashdata('updateberhasil','true');
-			redirect('stok/daftarkategori');
+			redirect('Stok/daftarkategori');
 		}
 		else {
 			$this->session->set_flashdata('updategagal','true');
-			redirect('stok/daftarkategori');
+			redirect('Stok/daftarkategori');
 		}
 	}
 
@@ -145,7 +145,7 @@ class Stok extends CI_Controller
 		$where = array ('id_kategori' =>$id_kategori);
 		$result = $this->Datakategori_model->hapuskategori($where, 'tbl_kategori');
 		$this->session->set_flashdata('hapusberhasil','true');
-		redirect(base_url('stok/daftarkategori'));
+		redirect(base_url('Stok/daftarkategori'));
 		
 	}
 
@@ -179,6 +179,49 @@ class Stok extends CI_Controller
 			$this->session->set_flashdata('gagal','true');
 			redirect(base_url('stok/daftarkategori'));
 		}
+	}
+
+	//Ganti Password
+	public function gantipassword()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('admin_stok/header',$data);
+		$this->load->view('admin_stok/sidebar');
+		$this->load->view('admin_stok/gantipassword');
+		$this->load->view('admin_stok/footer');
+	}
+
+	//Data Barang 
+	public function daftarbarang()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('admin_stok/header',$data);
+		$this->load->view('admin_stok/sidebar');
+		$this->load->view('admin_stok/daftarbarang');
+		$this->load->view('admin_stok/footer');
+	}
+
+	public function detailbarang()
+	{
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('admin_stok/header',$data);
+		$this->load->view('admin_stok/sidebar');
+		$this->load->view('admin_stok/detailbarang');
+		$this->load->view('admin_stok/footer');
+	}
+
+	public function inputbarang()
+	{
+
+		$id_user = $this->session->userdata('id_user');
+		$data['user'] = $this->Datauser_model->GetWhereUser($id_user);
+		$this->load->view('admin_stok/header',$data);
+		$this->load->view('admin_stok/sidebar');
+		$this->load->view('admin_stok/inputbarang');
+		$this->load->view('admin_stok/footer');
 	}
 }
 

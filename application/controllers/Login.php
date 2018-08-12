@@ -18,7 +18,7 @@ class Login extends CI_Controller
 				if ($this->session->userdata('role') == "admin") {
 					redirect('admin');
 				}else if ($this->session->userdata('bagian')=='stok') {
-					redirect('stok');
+					redirect('Stok');
 				}
 			}
 		}
@@ -51,12 +51,12 @@ class Login extends CI_Controller
 			);
 			$this->session->set_userdata($data_session);
 			if ($this->session->userdata('bagian')=='stok') {
-				redirect(base_url('stok'));
+				redirect(base_url('Stok'));
 			}
 		}
 		else{
 			$this->session->set_flashdata('gagallogin', 'true');
-			redirect('login');
+			redirect('Login');
 		}
 	}
 }

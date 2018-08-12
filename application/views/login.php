@@ -48,7 +48,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
                 </div> -->
                 <div class="card-content">
                   <div class="card-body text-center">
-                    <img src="<?php echo base_url('app-assets/images/portrait/medium/avatar-m-1.png') ?>" class="rounded-circle  height-150"
+                    <img src="<?php echo base_url('app-assets/images/logo/avatar-m-1.png') ?>" class="rounded-circle  height-150"
                      alt="Card image">
                   </div>
                   <?php if ($this->session->flashdata('gagallogin')):?>

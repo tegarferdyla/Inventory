@@ -2,15 +2,13 @@
     <div class="content-wrapper">
       <div class="content-header row">
         <div class="content-header-left col-md-6 col-12 mb-2">
-          <h3 class="content-header-title mb-0">Profile</h3>
+          <h3 class="content-header-title mb-0">Data Barangx</h3>
           <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('stok') ?>">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="<?php echo base_url('stok/daftarkategori') ?>">Daftar Kategori</a>
-                </li>
-                <li class="breadcrumb-item active">Edit Profile
+                <li class="breadcrumb-item active">Input Barang
                 </li>
               </ol>
             </div>
@@ -32,21 +30,27 @@
               <div class="card box-shadow-2">
                 <div class="card-content collpase show">
                   <div class="card-body">
-                    <form class="form form-horizontal" action="<?php echo base_url()."index.php/stok/updatekategori" ?>" method="post">
+                    <form class="form form-horizontal" action="#" method="post">
                       <div class="form-body">
-                        <h4 class="form-section"><i class="ft-bookmark"></i>Edit Kategori</h4>
-                        <input type="hidden" value="<?php echo $id_kategori ?>" id="projectinput5" class="form-control" placeholder=""name="id_kategori">
-                        <div class="form-group row">
-                          <label class="col-md-3 label-control" for="projectinput5">Nama Kategori</label>
+                        <input type="hidden" value="" id="projectinput5" class="form-control" placeholder=""name="id_barang">
+                        <h4 class="form-section"><i class="ft-camera"></i>Foto Barang</h4>
+                          <div class="form-group row">
+                          <label class="col-md-3 label-control" for="projectinput5">Foto Barang</label>
                           <div class="col-md-9">
-                            <input type="text" value="<?php echo ucwords($kategori); ?>" id="projectinput5" class="form-control" placeholder=""
-                            name="kategori">
+                            <input type="file" value="" id="projectinput5" class="form-control" placeholder="Nama Barang" name="kategori" required>
+                          </div>
+                        </div>
+                        <h4 class="form-section"><i class="ft-shopping-cart"></i>Nama Barang</h4>
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="projectinput5">Nama Barang</label>
+                          <div class="col-md-9">
+                            <input type="text" value="" id="projectinput5" class="form-control" placeholder="Nama Barang" name="kategori" required>
                           </div>
                         </div>
                         <div class="form-group row">
                           <label class="col-md-3 label-control" for="projectinput9">Deskripsi</label>
                           <div class="col-md-9">
-                            <textarea id="projectinput9" rows="5" class="form-control" name="deskripsi" placeholder=""><?php echo $deskripsi; ?></textarea>
+                            <textarea id="projectinput9" rows="5" class="form-control" name="deskripsi" placeholder="Deskripsi"></textarea>
                           </div>
                         </div>
                       </div>

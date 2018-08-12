@@ -8,9 +8,7 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo base_url('stok') ?>">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="<?php echo base_url('stok/daftarkategori') ?>">Daftar Kategori</a>
-                </li>
-                <li class="breadcrumb-item active">Edit Profile
+                <li class="breadcrumb-item active">Ganti Password
                 </li>
               </ol>
             </div>
@@ -32,21 +30,26 @@
               <div class="card box-shadow-2">
                 <div class="card-content collpase show">
                   <div class="card-body">
-                    <form class="form form-horizontal" action="<?php echo base_url()."index.php/stok/updatekategori" ?>" method="post">
+                    <form class="form form-horizontal" action="#" method="post">
                       <div class="form-body">
-                        <h4 class="form-section"><i class="ft-bookmark"></i>Edit Kategori</h4>
-                        <input type="hidden" value="<?php echo $id_kategori ?>" id="projectinput5" class="form-control" placeholder=""name="id_kategori">
+                        <h4 class="form-section"><i class="ft-lock"></i>Ganti Password</h4>
+                        <input type="hidden" value="" id="projectinput5" class="form-control" placeholder=""name="id_kategori">
                         <div class="form-group row">
-                          <label class="col-md-3 label-control" for="projectinput5">Nama Kategori</label>
+                          <label class="col-md-3 label-control" for="projectinput5">Password Lama</label>
                           <div class="col-md-9">
-                            <input type="text" value="<?php echo ucwords($kategori); ?>" id="projectinput5" class="form-control" placeholder=""
-                            name="kategori">
+                            <input type="text" value="" id="projectinput5" class="form-control" placeholder="Password Lama" name="passwordlama" required>
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label class="col-md-3 label-control" for="projectinput9">Deskripsi</label>
+                          <label class="col-md-3 label-control" for="projectinput5">Password Baru</label>
                           <div class="col-md-9">
-                            <textarea id="projectinput9" rows="5" class="form-control" name="deskripsi" placeholder=""><?php echo $deskripsi; ?></textarea>
+                            <input type="text" value="" id="projectinput5" class="form-control" placeholder="Password Baru" name="newpassword" required>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 label-control" for="projectinput5">Re-Password Baru</label>
+                          <div class="col-md-9">
+                            <input type="text" value="" id="projectinput5" class="form-control" placeholder="Re-Password Baru" name="retype" required>
                           </div>
                         </div>
                       </div>

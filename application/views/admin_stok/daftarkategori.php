@@ -16,16 +16,9 @@
         </div>
         <div class="content-header-right col-md-6 col-12">
           <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-            <div class="btn-group" role="group">
-              <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right" id="btnGroupDrop1"
-              type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ft-settings icon-left"></i> Settings</button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="#">Contoh 1</a>
-                <a class="dropdown-item" href="#">Contoh 2</a>
-              </div>
-            </div>
-            <a class="btn btn-outline-primary" href="#"><i class="ft-mail"></i></a>
-            <a class="btn btn-outline-primary" href="#"><i class="ft-pie-chart"></i></a>
+            <?php date_default_timezone_set('Asia/Jakarta'); date_default_timezone_set("Asia/Jakarta"); $jam  =  date("H:i:s");  ?>
+            <h6 class="text-success"><i class="ft-calendar"> <?php echo date('d-m-Y') ?> </i></h6>&nbsp; &nbsp; &nbsp;
+            <i class="ft-clock text-info  "></i>&nbsp; &nbsp;<h6 class="text-info" id="txt"></h6>         
           </div>
         </div>
       </div>
@@ -93,8 +86,8 @@
                           <td><?php echo ucwords($u->kategori) ?></td>
                           <td><?php echo $u->deskripsi ?></td>
                           <td>
-                            <a class="btn btn-icon btn-success mr-1" href="<?php echo base_url()."stok/editkategori/".$u->id_kategori;?>" title="Edit"><i class="ft-edit"></i></a>
-                            <a onclick="return confirm('Apa anda yakin ingin menghapus kategori ini?')" class="btn btn-icon btn-danger" href="<?php echo base_url()."stok/hapuskategori/".$u->id_kategori;?>" title="Hapus"><i class="ft-trash"></i></a>
+                            <a class="btn btn-icon btn-success mr-1" href="<?php echo base_url()."Stok/editkategori/".$u->id_kategori;?>" title="Edit"><i class="ft-edit"></i></a>
+                            <a onclick="return confirm('Apa anda yakin ingin menghapus kategori ini?')" class="btn btn-icon btn-danger" href="<?php echo base_url()."Stok/hapuskategori/".$u->id_kategori;?>" title="Hapus"><i class="ft-trash"></i></a>
                           </td>
                         </tr>
                         <?php } ?>

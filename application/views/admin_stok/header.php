@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('app-assets/fonts/meteocons/style.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('app-assets/vendors/css/charts/morris.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('app-assets/vendors/css/tables/datatable/datatables.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('app-assets/vendors/css/extensions/sweetalert.css') ?>">
   <!-- END VENDOR CSS-->
   <!-- BEGIN STACK CSS-->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('app-assets/css/app.css') ?>">
@@ -35,7 +36,7 @@
   <!-- END Custom CSS-->
 </head>
 <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
-data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" onload="startTime()">
   <!-- fixed-top-->
   <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow">
     <div class="navbar-wrapper">
@@ -111,13 +112,13 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
             <li class="dropdown dropdown-user nav-item">
               <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                 <span class="avatar avatar-online">
-                  <img src="<?php echo base_url('app-assets/images/portrait/small/'.$user['foto_user']) ?>" alt="avatar"><i></i></span>
+                  <img src="<?php echo base_url('app-assets/images/users/'.$user['foto_user']) ?>" alt="avatar"><i></i></span>
                 <span class="user-name"><?php echo ucwords($user['nama_user']); ?></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="<?php echo base_url('stok/editprofile')?>"><i class="ft-user"></i> Edit Profile</a>
                 <a class="dropdown-item" href="#"><i class="ft-lock"></i>Ganti Password</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
+                <a class="dropdown-item" href="<?php echo base_url('login?logout=signout');?>"><i class="ft-power"></i> Logout</a>
               </div>
             </li>
           </ul>
